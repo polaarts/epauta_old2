@@ -15,6 +15,7 @@ export default async function Home () {
   if (session === null) redirect('/auth/login')
 
   const links = [
+
     { href: 'https://docencia-eit.udp.cl/salas/', label: 'Foro', icon: <QRIcon /> },
     { href: 'https://malla-fic.surge.sh/#', label: 'Malla interactiva', icon: <MapIcon /> },
     { href: 'https://udp.instructure.com/', label: 'Canvas', icon: <CanvasIcon /> },
