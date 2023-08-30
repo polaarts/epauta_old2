@@ -10,7 +10,7 @@ interface Recurso {
   descripcion?: string
   url: string
   ramo: string
-  tags: string
+  tags: Tags | string
 }
 
 type Tags = Tag[]

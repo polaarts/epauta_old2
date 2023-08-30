@@ -10,7 +10,7 @@ const RamoPage = async () => {
   const supabase = createServerComponentClient({ cookies })
   const { data: { session } } = await supabase.auth.getSession()
 
-  const id = session.user.id
+  const id = session?.user.id
   return (
     <>
       <RecursosRamo id={id} recursos={recursos} grid={3} ramos={ramos} />
