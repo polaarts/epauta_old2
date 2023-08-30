@@ -1,7 +1,7 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
-import { CanvasIcon, MapIcon, LightIcon, SquareIcon } from './components/icons'
+import { CanvasIcon, MapIcon, LightIcon, SquareIcon, QRIcon } from './components/icons'
 import Link from 'next/link'
 import { getLatestRecursos } from './utils/queries/archivos'
 import RecursosCardList from './components/recursos/recursos-card-list'
@@ -15,10 +15,11 @@ export default async function Home () {
   if (session === null) redirect('/auth/login')
 
   const links = [
-    { href: '/', label: 'Malla interactiva', icon: <MapIcon /> },
-    { href: '/', label: 'Canvas', icon: <CanvasIcon /> },
-    { href: '/', label: 'Generador de horarios', icon: <SquareIcon /> },
-    { href: '/', label: 'ChatGPT', icon: <LightIcon /> }
+    { href: 'https://docencia-eit.udp.cl/salas/', label: 'Foro', icon: <QRIcon /> },
+    { href: 'https://malla-fic.surge.sh/#', label: 'Malla interactiva', icon: <MapIcon /> },
+    { href: 'https://udp.instructure.com/', label: 'Canvas', icon: <CanvasIcon /> },
+    { href: 'http://horariosxdxd.surge.sh/horarios', label: 'Generador de horarios', icon: <SquareIcon /> },
+    { href: 'https://chat.openai.com/', label: 'ChatGPT', icon: <LightIcon /> }
   ]
 
   const carreras = [
