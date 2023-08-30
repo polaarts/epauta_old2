@@ -1,5 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import { Head } from 'next/document'
 import Container from './components/container'
 import { Analytics } from '@vercel/analytics/react'
 
