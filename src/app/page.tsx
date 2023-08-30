@@ -11,12 +11,11 @@ export default async function Home () {
   const supabase = createServerComponentClient({ cookies })
   const { data: { session } } = await supabase.auth.getSession()
   const latestRecursos = await getLatestRecursos()
-
   if (session === null) redirect('/auth/login')
 
   const links = [
 
-    { href: 'https://docencia-eit.udp.cl/salas/', label: 'Foro', icon: <QRIcon /> },
+    { href: 'https://docencia-eit.udp.cl/salas/', label: 'Salas EIT', icon: <QRIcon /> },
     { href: 'https://malla-fic.surge.sh/#', label: 'Malla interactiva', icon: <MapIcon /> },
     { href: 'https://udp.instructure.com/', label: 'Canvas', icon: <CanvasIcon /> },
     { href: 'http://horariosxdxd.surge.sh/horarios', label: 'Generador de horarios', icon: <SquareIcon /> },
@@ -50,7 +49,6 @@ export default async function Home () {
               </div>
             </Link>))}
         </div>
-
         <small className='text-white uppercase'>Otras herramientas</small>
         <div className='grid grid-cols-1 gap-y-4 my-2'>
           {links.map(({ href, label, icon }) => (
