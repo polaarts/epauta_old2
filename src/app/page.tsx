@@ -15,7 +15,7 @@ export default async function Home () {
 
   const links = [
 
-    { href: 'https://docencia-eit.udp.cl/salas/', label: 'Salas EIT', icon: <QRIcon /> },
+    { href: 'https://docencia-eit.udp.cl/salas/', label: 'SalasEIT', icon: <QRIcon /> },
     { href: 'https://malla-fic.surge.sh/#', label: 'Malla interactiva', icon: <MapIcon /> },
     { href: 'https://udp.instructure.com/', label: 'Canvas', icon: <CanvasIcon /> },
     { href: 'http://horariosxdxd.surge.sh/horarios', label: 'Generador de horarios', icon: <SquareIcon /> },
