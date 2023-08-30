@@ -13,7 +13,7 @@ interface Recurso {
   tags: Tags | string
 }
 
-type Tags = Tag[] | string
+type Tags = Tag[]
 
 interface Tag {
   id: string
