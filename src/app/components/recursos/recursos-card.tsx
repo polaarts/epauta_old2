@@ -21,7 +21,15 @@ const RecursosCard = ({ recurso }: { recurso: Recurso }) => {
                 </Link>
             </CardHeader>
             <CardBody>
-                {descripcion ?? <span className='text-gray-400'>Sin descripción</span>}
+                <CardBody>
+                    {descripcion !== null && descripcion !== ''
+                      ? (
+                          descripcion
+                        )
+                      : (
+                        <span className='text-gray-400'>Sin descripción</span>
+                        )}
+                </CardBody>
             </CardBody>
             <CardFooter>
                 <TagsList tags={tags} />
