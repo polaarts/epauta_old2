@@ -27,13 +27,14 @@ const RecursosCard = ({ recurso }: { recurso: Recurso }) => {
                           descripcion
                         )
                       : (
-                        <span className='text-gray-400'>Sin descripción</span>
+                            <span className='text-gray-400'>Sin descripción</span>
                         )}
                 </CardBody>
             </CardBody>
             <CardFooter>
                 <TagsList tags={tags} />
-                <Link href={url}>
+                <Link href={url} target="_blank"
+                    rel="noopener noreferrer">
                     <LinkIcon />
                 </Link>
             </CardFooter>
