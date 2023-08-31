@@ -117,12 +117,18 @@ export const getRamosIndustrial = async () => {
     .select('*')
     .like('codigo', '%CBQ%')
 
+  const { data: estadistica } = await supabase
+    .from('ramos')
+    .select('*')
+    .like('codigo', '%CBE%')
+
   const ramos: Ramos = []
 
   if (matematica != null) ramos.push(...matematica)
   if (fisica != null) ramos.push(...fisica)
   if (quimica != null) ramos.push(...quimica)
   if (industrial != null) ramos.push(...industrial)
+  if (estadistica != null) ramos.push(...estadistica)
 
   return ramos
 }
