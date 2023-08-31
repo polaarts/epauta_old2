@@ -1,13 +1,14 @@
 'use client'
 
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import RecursosCard from '@/app/components/recursos/recursos-card'
 import Link from 'next/link'
 import { useState } from 'react'
 
 const RecursosRamo = ({ recursos, ramos, grid, id }: { recursos: Recursos, ramos: Ramos, grid: number, id: string | undefined }) => {
   const pathname = usePathname()
+  const router = useRouter()
   const codigo = pathname.split('/')[1]
   const [open, setOpen] = useState(false)
   const supabase = createClientComponentClient()
@@ -29,13 +30,12 @@ const RecursosRamo = ({ recursos, ramos, grid, id }: { recursos: Recursos, ramos
 
     try {
       const { error } = await supabase.from('recursos').insert(recursosList)
+      router.refresh()
       if (error != null) {
         console.error('Error al insertar recursos:', error)
         console.log(recursosList, 'con error')
       } else {
         console.log('Recursos insertados exitosamente:', recursosList)
-
-        console.log(recursosList, 'exitosamente')
         // Puedes realizar alguna acción aquí, como actualizar el estado o mostrar un mensaje de éxito
       }
     } catch (error) {
