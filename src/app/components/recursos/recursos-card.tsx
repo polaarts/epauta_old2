@@ -2,9 +2,10 @@ import Link from 'next/link'
 import { Card, CardBody, CardFooter, CardHeader, CardTitle } from '../card'
 import { LinkIcon } from '../icons'
 import TagsList from './tags/tags-list'
+import convertirFecha from '@/app/utils/date'
 
 const RecursosCard = ({ recurso }: { recurso: Recurso }) => {
-  const { tipo, anio, semestre, descripcion, url, tags, ramo } = recurso
+  const { tipo, anio, semestre, descripcion, url, tags, ramo, created } = recurso
   return (
 
         <Card>
@@ -38,6 +39,7 @@ const RecursosCard = ({ recurso }: { recurso: Recurso }) => {
                     <LinkIcon />
                 </Link>
             </CardFooter>
+            <small className='mt-3 text-gray-400'>{convertirFecha(created)}</small>
         </Card>
   )
 }

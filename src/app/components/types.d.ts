@@ -11,6 +11,7 @@ interface Recurso {
   url: string
   ramo: string
   tags: Tags | string
+  created: string
 }
 
 type Tags = Tag[]
