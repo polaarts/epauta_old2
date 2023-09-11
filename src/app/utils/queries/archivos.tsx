@@ -9,7 +9,7 @@ export const getLatestRecursos = cache(async () => {
     .from('recursos')
     .select('id, tipo, anio, semestre, descripcion, url, ramo, created, tags(id, tag)')
     .order('created', { ascending: false })
-    .range(0, 7)
+    .range(0, 9)
 
   return latestRecursos
 })
@@ -19,7 +19,7 @@ export const getRecursosByRamo = cache(async () => {
   const { data: recursos } = await supabase
     .from('recursos')
     .select('id, tipo, anio, semestre, descripcion, url, ramo, created, tags(id, tag)')
-    .order('created_at', { ascending: false })
+    .order('created', { ascending: false })
 
   return recursos
 })

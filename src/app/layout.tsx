@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import Container from './components/container'
 import { Analytics } from '@vercel/analytics/react'
+import { StrictMode } from 'react'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = {
@@ -16,12 +17,14 @@ export default async function RootLayout ({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Container>
-          {children}
-        </Container>
-        <Analytics />
-      </body>
+      <StrictMode>
+        <body>
+          <Container>
+            {children}
+          </Container>
+          <Analytics />
+        </body>
+      </StrictMode>
     </html>
   )
 }

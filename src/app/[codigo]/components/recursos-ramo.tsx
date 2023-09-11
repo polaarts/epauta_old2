@@ -76,16 +76,8 @@ const RecursosRamo = ({ recursos, ramos, grid, id }: { recursos: Recursos, ramos
     }
   }
 
-  // useEffect(() => {
-  //   const insert = async () => {
-  //     const { data } = await supabase.from('recursos').insert(recursosList)
-  //     console.log(recursosList)
-  //   }
-
-  //   insert()
-  // }, [])
-
   const material = recursos?.filter((recurso) => recurso.ramo === codigo)
+  console.log(material)
   const ramo = ramos?.find((ramo) => ramo.codigo === codigo)?.nombre
   return (
     <main className="flex flex-col">
