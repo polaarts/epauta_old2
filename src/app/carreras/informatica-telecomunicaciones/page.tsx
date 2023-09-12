@@ -3,7 +3,7 @@ import ModelPage from '../components/model-page'
 
 export default async function Home () {
   const ramos = await getRamosInformatica()
-  const malla = 'informática'
+  const malla = 'informática y telecomunicaciones'
 
   return (
         <ModelPage ramos={ramos} malla={malla} />

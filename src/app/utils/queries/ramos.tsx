@@ -159,3 +159,13 @@ export const getRamosPlanComun = async () => {
 
   return ramos
 }
+
+export const getRamosVespertinoInformatica = async () => {
+  const supabase = createServerComponentClient({ cookies })
+  const { data: vespertinoInformatica } = await supabase
+    .from('ramos')
+    .select('*')
+    .like('codigo', '%VIG%')
+
+  return vespertinoInformatica
+}

@@ -15,9 +15,10 @@ const Aside = () => {
   ]
 
   const carreras = [
-    { href: '/carreras/informatica', label: 'Informática' },
+    { href: '/carreras/informatica-telecomunicaciones', label: 'Informática y Telecomunicaciones' },
     { href: '/carreras/industrial', label: 'Industrial' },
-    { href: '/carreras/obras-civiles', label: 'Obras Civiles' }
+    { href: '/carreras/obras-civiles', label: 'Obras Civiles' },
+    { href: '/carreras/informatica-gestion', label: 'Informática y Gestión' }
   ]
 
   return (
